@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Window.gd" type="Script" id=1]
+[ext_resource path="res://src/ScrollingTextureRect.gd" type="Script" id=2]
+
+[node name="Window" type="Control"]
+anchor_right = 0.304333
+anchor_bottom = 0.655778
+margin_right = -0.0800018
+margin_bottom = -0.0600052
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": true
+}
+margin_scale = 2.0
+
+[node name="BackgroundContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="BackgroundContainer"]
+margin_right = 146.0
+margin_bottom = 177.0
+stretch_mode = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+draw_center = false
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Contents" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Contents"]
+margin_right = 146.0
+margin_bottom = 177.0
+
+[node name="Label" type="Label" parent="Contents/VBoxContainer"]
+margin_right = 146.0
+margin_bottom = 14.0
+align = 1
+
+[node name="Tween" type="Tween" parent="."]
