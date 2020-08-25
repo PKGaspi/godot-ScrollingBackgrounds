@@ -5,8 +5,8 @@ export(float, 0, 5) var opening_time: float = 1
 export(float, 0, 5) var closing_time: float = .5
 
 
-onready var _background_container_node := $BackgroundContainer
-onready var _background_node := $BackgroundContainer/Background
+#onready var _background_container_node := $BackgroundContainer
+onready var _background_node := $Background
 onready var _border_node := $Border
 onready var _contents_node := $Contents
 onready var _tween := $Tween
@@ -22,18 +22,21 @@ func _ready() -> void:
 	
 	opening_animation()
 	
+	var texture_size = _background_node.texture.get_size()
+	
 	yield(self, "opened")
+	
 	
 	# Compensate for ongoing direction.
 	if _background_node.scroll_velocity.x > 0:
-		_background_container_node.margin_right = -_border_node.patch_margin_right
+		_background_node.margin_right = -texture_size.x
 	elif _background_node.scroll_velocity.x < 0:
-		_background_container_node.margin_left = _border_node.patch_margin_left
+		_background_node.margin_left = texture_size.x
 
 	if _background_node.scroll_velocity.y > 0:
-		_background_container_node.margin_bottom = -_border_node.patch_margin_bottom
+		_background_node.margin_bottom = -texture_size.y
 	elif _background_node.scroll_velocity.y < 0:
-		_background_container_node.margin_top = _border_node.patch_margin_top
+		_background_node.margin_top = texture_size.y
 	
 	_contents_node.margin_bottom = - margin_scale * _border_node.patch_margin_bottom
 	_contents_node.margin_left = margin_scale * _border_node.patch_margin_left

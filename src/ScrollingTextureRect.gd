@@ -12,6 +12,8 @@ var progress: Vector2 = Vector2.ZERO
 
 func _process(delta):
 	
+	if texture == null: return
+	
 	var texture_size = texture.get_size()
 	
 	if !scrolling or texture_size == Vector2.ZERO: 
