@@ -18,7 +18,9 @@ signal closed()
 
 func _ready() -> void:
 	
+	_border_node.rect_min_size = _border_node.texture.get_size()
 	_background_node.rect_min_size = _border_node.rect_min_size * 2/3
+	rect_min_size = _border_node.rect_min_size
 	
 	opening_animation()
 	
@@ -45,28 +47,29 @@ func _ready() -> void:
 
 
 
-func resize_animation(start_size: Vector2, final_size: Vector2, time: float = 1, hide: CanvasItem = _contents_node):
+func resize_animation(start_pos: Vector2, final_pos: Vector2, start_size: Vector2, final_size: Vector2, time: float = 1, hide: CanvasItem = _contents_node):
+	var prev_scrolling: bool = _background_node.scrolling
+	_background_node.scrolling = false
 	if hide != null: hide.visible = false
 	# Start opening animation.
 	_tween.interpolate_property(self, "rect_size", start_size, final_size, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	_tween.interpolate_property(self, "rect_position", rect_position + final_size / 2, rect_position + start_size / 2, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	_tween.interpolate_property(self, "rect_position", start_pos, final_pos, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	printt(name, rect_position + start_size / 2)
 	_tween.start()
 	yield(_tween, "tween_all_completed") # Wait until the animation is over.
 	# Animation is over.
+	_background_node.scrolling = prev_scrolling
 	if hide != null: hide.visible = true
 	emit_signal("animation_ended")
 
 
 func opening_animation(time = opening_time):
-	var prev_scrolling: bool = _background_node.scrolling
-	_background_node.scrolling = false
-	resize_animation(Vector2.ZERO, rect_size, time)
+	resize_animation(rect_position + rect_size / 2 - rect_min_size / 2, rect_position, rect_min_size, rect_size, time)
 	yield(self, "animation_ended")
 	emit_signal("opened")
-	_background_node.scrolling = prev_scrolling
 
 
-func closing_animation(time = opening_time):
-	resize_animation(rect_size, Vector2.ZERO, time)
+func closing_animation(time = closing_time):
+	resize_animation(rect_position, rect_position + rect_size / 2 - rect_min_size / 2, rect_size, rect_min_size, time)
 	yield(self, "animation_ended")
 	emit_signal("closed")

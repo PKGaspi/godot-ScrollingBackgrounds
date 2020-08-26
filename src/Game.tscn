@@ -133,24 +133,24 @@ margin_bottom = 107.0
 [node name="Label" parent="Window4/Contents/VBoxContainer" index="0"]
 margin_right = 95.0
 
-[node name="Window" parent="." instance=ExtResource( 8 )]
+[node name="Window6" parent="." instance=ExtResource( 8 )]
 anchor_left = 0.194238
 anchor_top = 0.181989
 anchor_right = 0.500655
 anchor_bottom = 0.463693
 
-[node name="Background" parent="Window" index="0"]
+[node name="Background" parent="Window6" index="0"]
 texture = ExtResource( 9 )
 scroll_velocity = Vector2( -10, -10 )
 
-[node name="Border" parent="Window" index="1"]
+[node name="Border" parent="Window6" index="1"]
 texture = ExtResource( 4 )
 
-[node name="VBoxContainer" parent="Window/Contents" index="0"]
+[node name="VBoxContainer" parent="Window6/Contents" index="0"]
 margin_right = 147.0
 margin_bottom = 76.0
 
-[node name="Label" parent="Window/Contents/VBoxContainer" index="0"]
+[node name="Label" parent="Window6/Contents/VBoxContainer" index="0"]
 margin_right = 147.0
 
 [editable path="Window0"]
@@ -163,4 +163,4 @@ margin_right = 147.0
 
 [editable path="Window4"]
 
-[editable path="Window"]
+[editable path="Window6"]
