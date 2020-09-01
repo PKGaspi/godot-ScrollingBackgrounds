@@ -28,8 +28,8 @@ func _ready() -> void:
 	
 	# Set minimum size based on the minimum size of the border.
 	_border_node.rect_min_size = _border_node.texture.get_size()
-	_background_node.rect_min_size = _border_node.rect_min_size * 2/3
 	rect_min_size = _border_node.rect_min_size
+	_background_node.rect_min_size = rect_min_size * 2/3
 	
 	# Animate opening.
 	opening_animation()
