@@ -1,0 +1,139 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/border_blue.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/bg_yellow.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/border_green.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/border_gray.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/border_orange.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/bg_red.png" type="Texture" id=7]
+[ext_resource path="res://Window.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sprites/bg_pink.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/bg_gray.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/bg.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/border.png" type="Texture" id=12]
+
+[node name="Game" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Window0" parent="." instance=ExtResource( 8 )]
+
+[node name="Background" parent="Window0" index="0"]
+texture = ExtResource( 11 )
+scroll_velocity = Vector2( 20, 20 )
+
+[node name="Border" parent="Window0" index="1"]
+texture = ExtResource( 2 )
+
+[node name="Window1" parent="." instance=ExtResource( 8 )]
+anchor_left = 0.112578
+anchor_top = 0.103471
+anchor_right = 0.328772
+anchor_bottom = 0.518623
+margin_left = -0.0374527
+margin_top = 0.0628777
+margin_right = 0.189545
+margin_bottom = -0.0281219
+
+[node name="Background" parent="Window1" index="0"]
+texture = ExtResource( 3 )
+scroll_velocity = Vector2( 40, -40 )
+
+[node name="Border" parent="Window1" index="1"]
+texture = ExtResource( 12 )
+
+[node name="VBoxContainer" parent="Window1/Contents" index="0"]
+margin_right = 104.0
+margin_bottom = 112.0
+
+[node name="Label" parent="Window1/Contents/VBoxContainer" index="0"]
+margin_right = 104.0
+
+[node name="Window2" parent="." instance=ExtResource( 8 )]
+anchor_left = 0.11
+anchor_top = 0.567
+anchor_right = 0.837083
+anchor_bottom = 0.911222
+margin_left = 0.199997
+margin_top = -0.0900116
+margin_right = 0.199982
+margin_bottom = -1.03003
+
+[node name="Background" parent="Window2" index="0"]
+texture = ExtResource( 7 )
+scroll_velocity = Vector2( 24, -12 )
+
+[node name="Border" parent="Window2" index="1"]
+texture = ExtResource( 4 )
+
+[node name="VBoxContainer" parent="Window2/Contents" index="0"]
+margin_right = 348.0
+margin_bottom = 91.0
+
+[node name="Label" parent="Window2/Contents/VBoxContainer" index="0"]
+margin_right = 348.0
+
+[node name="Window3" parent="." instance=ExtResource( 8 )]
+anchor_left = 0.358
+anchor_top = 0.093
+anchor_right = 0.617167
+anchor_bottom = 0.518815
+margin_left = 0.159988
+margin_top = -0.110001
+margin_right = -0.23999
+margin_bottom = -0.0800171
+
+[node name="Background" parent="Window3" index="0"]
+texture = ExtResource( 10 )
+scroll_velocity = Vector2( 12, -25 )
+
+[node name="Border" parent="Window3" index="1"]
+texture = ExtResource( 6 )
+
+[node name="VBoxContainer" parent="Window3/Contents" index="0"]
+margin_right = 124.0
+margin_bottom = 115.0
+
+[node name="Label" parent="Window3/Contents/VBoxContainer" index="0"]
+margin_right = 124.0
+
+[node name="Window4" parent="." instance=ExtResource( 8 )]
+anchor_left = 0.746055
+anchor_top = 0.0633201
+anchor_right = 0.946968
+anchor_bottom = 0.459343
+margin_left = 0.23999
+margin_top = -0.110001
+margin_right = -0.198578
+margin_bottom = -0.0361176
+rect_rotation = 15.5
+
+[node name="Background" parent="Window4" index="0"]
+texture = ExtResource( 9 )
+scroll_velocity = Vector2( 0, 20 )
+
+[node name="Border" parent="Window4" index="1"]
+texture = ExtResource( 5 )
+
+[node name="VBoxContainer" parent="Window4/Contents" index="0"]
+margin_right = 95.0
+margin_bottom = 107.0
+
+[node name="Label" parent="Window4/Contents/VBoxContainer" index="0"]
+margin_right = 95.0
+
+[node name="Window5" parent="." instance=ExtResource( 8 )]
+anchor_left = 0.194238
+anchor_top = 0.181989
+anchor_right = 0.500655
+anchor_bottom = 0.463693
+
+[editable path="Window0"]
+
+[editable path="Window1"]
+
+[editable path="Window2"]
+
+[editable path="Window3"]
+
+[editable path="Window4"]
