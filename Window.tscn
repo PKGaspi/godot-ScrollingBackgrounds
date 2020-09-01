@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://src/Window.gd" type="Script" id=1]
-[ext_resource path="res://src/ScrollingTextureRect.gd" type="Script" id=2]
+[ext_resource path="res://Window.gd" type="Script" id=1]
+[ext_resource path="res://ScrollingTextureRect.gd" type="Script" id=2]
+
+
 
 [node name="Window" type="Control"]
 anchor_right = 0.304333
