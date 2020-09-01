@@ -4,7 +4,7 @@ extends Control
 # How far from the border the contents draw.
 # 0 means no margin, the contents draw right next to the border.
 # 2 means the margin is twice the border size.
-export(float, 0, 10) var margin_scale: float = 1 
+export(float, 0, 10) var margin_scale: float = 0
 # Opening time:
 # The time it takes for the opening animation of this window to end.
 export(float, 0, 5) var opening_time: float = 1
