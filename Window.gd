@@ -28,8 +28,8 @@ func _ready() -> void:
 	
 	# Set minimum size based on the minimum size of the border.
 	_border_node.rect_min_size = _border_node.texture.get_size()
-	_background_node.rect_min_size = _border_node.rect_min_size * 2/3
 	rect_min_size = _border_node.rect_min_size
+	_background_node.rect_min_size = rect_min_size * 2/3
 	
 	# Animate opening.
 	opening_animation()
@@ -67,7 +67,6 @@ func resize_animation(start_pos: Vector2, final_pos: Vector2, start_size: Vector
 	# Start opening animation.
 	_tween.interpolate_property(self, "rect_size", start_size, final_size, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	_tween.interpolate_property(self, "rect_position", start_pos, final_pos, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	printt(name, rect_position + start_size / 2)
 	_tween.start()
 	yield(_tween, "tween_all_completed") # Wait until the animation is over.
 	# Animation is over.
