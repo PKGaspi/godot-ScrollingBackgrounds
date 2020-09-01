@@ -42,13 +42,6 @@ scroll_velocity = Vector2( 40, -40 )
 [node name="Border" parent="Window1" index="1"]
 texture = ExtResource( 12 )
 
-[node name="VBoxContainer" parent="Window1/Contents" index="0"]
-margin_right = 104.0
-margin_bottom = 112.0
-
-[node name="Label" parent="Window1/Contents/VBoxContainer" index="0"]
-margin_right = 104.0
-
 [node name="Window2" parent="." instance=ExtResource( 8 )]
 anchor_left = 0.11
 anchor_top = 0.567
@@ -66,13 +59,6 @@ scroll_velocity = Vector2( 24, -12 )
 [node name="Border" parent="Window2" index="1"]
 texture = ExtResource( 4 )
 
-[node name="VBoxContainer" parent="Window2/Contents" index="0"]
-margin_right = 348.0
-margin_bottom = 91.0
-
-[node name="Label" parent="Window2/Contents/VBoxContainer" index="0"]
-margin_right = 348.0
-
 [node name="Window3" parent="." instance=ExtResource( 8 )]
 anchor_left = 0.358
 anchor_top = 0.093
@@ -89,13 +75,6 @@ scroll_velocity = Vector2( 12, -25 )
 
 [node name="Border" parent="Window3" index="1"]
 texture = ExtResource( 6 )
-
-[node name="VBoxContainer" parent="Window3/Contents" index="0"]
-margin_right = 124.0
-margin_bottom = 115.0
-
-[node name="Label" parent="Window3/Contents/VBoxContainer" index="0"]
-margin_right = 124.0
 
 [node name="Window4" parent="." instance=ExtResource( 8 )]
 anchor_left = 0.746055
@@ -115,18 +94,18 @@ scroll_velocity = Vector2( 0, 20 )
 [node name="Border" parent="Window4" index="1"]
 texture = ExtResource( 5 )
 
-[node name="VBoxContainer" parent="Window4/Contents" index="0"]
-margin_right = 95.0
-margin_bottom = 107.0
-
-[node name="Label" parent="Window4/Contents/VBoxContainer" index="0"]
-margin_right = 95.0
-
 [node name="Window5" parent="." instance=ExtResource( 8 )]
 anchor_left = 0.194238
 anchor_top = 0.181989
 anchor_right = 0.500655
 anchor_bottom = 0.463693
+
+[node name="Background" parent="Window5" index="0"]
+texture = ExtResource( 9 )
+scroll_velocity = Vector2( -20, 14 )
+
+[node name="Border" parent="Window5" index="1"]
+texture = ExtResource( 4 )
 
 [editable path="Window0"]
 
@@ -137,3 +116,5 @@ anchor_bottom = 0.463693
 [editable path="Window3"]
 
 [editable path="Window4"]
+
+[editable path="Window5"]
