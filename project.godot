@@ -9,10 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "TextureRect",
+"base": "Reference",
 "class": "ScrollingTextureRect",
 "language": "GDScript",
-"path": "res://src/ScrollingTextureRect.gd"
+"path": "res://ScrollingTextureRect.gd"
 } ]
 _global_script_class_icons={
 "ScrollingTextureRect": ""
