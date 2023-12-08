@@ -8,10 +8,10 @@ func _input(event: InputEvent) -> void:
 
 
 func exit_game(exit_code: int = 0) -> void:
-	for child in get_children():
+	for child in get_children()[0].get_children():
 		child.closing_animation()
-	for child in get_children():
-		yield(child, "closed")
+	for child in get_children()[0].get_children():
+		await child.closed
 		child.queue_free()
 	
 	get_tree().quit(exit_code)
